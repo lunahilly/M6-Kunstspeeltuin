@@ -12,6 +12,7 @@ function SetUp(){
         canvas.style.width = `${width}px`;
         canvas.style.width = `${width}px`;
         canvas.style.backgroundColor = "red";
+        
 
         video = document.getElementById("camera");
         document.addEventListener('click', takePhoto);
@@ -34,6 +35,18 @@ function takePhoto(e){
     e.preventDefault();
 
     ctx.drawImage(video, 0, 0, width, height);
+    let canvasUrl = canvas.toDataURL();
+    // Create an anchor, and set the href value to our data URL
+    const createEl = document.createElement('a');
+    createEl.href = canvasUrl;
+
+    // This is the name of our downloaded file
+    createEl.download = "photo";
+
+    // Click the download button, causing a download, and then remove it
+    createEl.click();
+    createEl.remove();
+
 }
 
 
