@@ -77,6 +77,8 @@ function maakFoto() {
 
     const nieuwCtx = nieuwCanvas.getContext('2d');
     nieuwCtx.drawImage(video, 0, 0, breedte, hoogte);
+    // new QRCode(document.getElementById("qrcode"), photo);
+
 
     // verwijder het canvas na 10 seconden
     setTimeout(() => {

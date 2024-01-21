@@ -1,5 +1,6 @@
 const width = 640, height = 480,
 canvas = document.getElementById("canvas");
+qr = document.getElementById("qrcode");
 ctx = canvas.getContext('2d');
 
 let video = null, isSetup = null;
@@ -12,6 +13,7 @@ function SetUp(){
         canvas.style.width = `${width}px`;
         canvas.style.width = `${width}px`;
         canvas.style.backgroundColor = "red";
+
         
 
         video = document.getElementById("camera");
@@ -36,14 +38,13 @@ function takePhoto(e){
 
     ctx.drawImage(video, 0, 0, width, height);
     let canvasUrl = canvas.toDataURL();
-    // Create an anchor, and set the href value to our data URL
-    const createEl = document.createElement('a');
+    const createEl = document.createElement("a");
     createEl.href = canvasUrl;
 
-    // This is the name of our downloaded file
-    createEl.download = "photo";
-
-    // Click the download button, causing a download, and then remove it
+    // naam van de download
+    let photo = createEl.download = "photo";
+    new QRCode(document.getElementById("qrcode"), a);
+    //zorgt dat hij download
     createEl.click();
     createEl.remove();
 

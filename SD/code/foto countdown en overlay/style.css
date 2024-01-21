@@ -1,0 +1,11 @@
+.qr{
+    background: red;
+    position: relative;
+    margin-top: 500px   ;
+
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
