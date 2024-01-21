@@ -14,8 +14,8 @@ void setup()
 }
 
 void loop() {
-  if(digitalRead(7)==HIGH || digitalRead(6)== HIGH) {
-    Serial.println("Movement detected.");
+  if(digitalRead(6)== HIGH) {
+    Serial.println("Movement detected sensor front.");
     digitalWrite(2, HIGH);  
         delay(1000);  
     digitalWrite(3, HIGH);  
@@ -23,14 +23,32 @@ void loop() {
     digitalWrite(4, HIGH); 
     delay(1000);
     digitalWrite(5, HIGH); 
-    delay(3000);
+    delay(5000);
     digitalWrite(2,LOW);
     digitalWrite(3,LOW);
     digitalWrite(4,LOW);
     digitalWrite(5,LOW);
     delay(3000);
 
-  } else {
+  }
+    else if(digitalRead(7)== HIGH) {
+    Serial.println("Movement detected sensor back.");
+    digitalWrite(5, HIGH);  
+        delay(1000);  
+    digitalWrite(4, HIGH);  
+        delay(1000);
+    digitalWrite(3, HIGH); 
+    delay(1000);
+    digitalWrite(2, HIGH); 
+    delay(5000);
+    digitalWrite(2,LOW);
+    digitalWrite(3,LOW);
+    digitalWrite(4,LOW);
+    digitalWrite(5,LOW);
+    delay(3000);
+
+  }
+  else {
     Serial.println("Did not detect movement.");
       delay(3000);
   }
