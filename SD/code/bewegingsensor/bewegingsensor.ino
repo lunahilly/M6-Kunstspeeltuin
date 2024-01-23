@@ -48,7 +48,7 @@ void loop() {
       digitalWrite(3, LOW);
       digitalWrite(4, LOW);
       digitalWrite(5, LOW);
-      delay(3000);
+      delay(8000);
   }
     else if( digitalRead(7)== HIGH && lamps == true){
       lamps = false;
@@ -57,10 +57,10 @@ void loop() {
       digitalWrite(3, LOW);
       digitalWrite(4, LOW);
       digitalWrite(5, LOW);
-      delay(3000);
+      delay(8000);
   }
   else {
     Serial.println("Did not detect movement.");
-      delay(1000);
+      delay(8000);
   }
 }
