@@ -61,6 +61,6 @@ void loop() {
   }
   else {
     Serial.println("Did not detect movement.");
-      delay(10000);
+      delay(1000);
   }
 }
